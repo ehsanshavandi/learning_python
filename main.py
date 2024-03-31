@@ -3,6 +3,7 @@ import random
 
 class Student:
     """Class's variables"""
+
     rooms = ["Gryffindor", "Hufflepuff", "Ravenclaw"]
 
     def __init__(self, name, house):
@@ -35,6 +36,7 @@ class Student:
 
     @classmethod
     def sort(cls, name):
+        """Always first argument of classmethod is the own class who called method"""
         print(name, "is in", random.choice(cls.rooms))
 
     @classmethod
