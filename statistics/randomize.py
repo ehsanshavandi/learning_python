@@ -31,7 +31,7 @@ class Randomize:
         observed_mean = x / 100
         z = (observed_mean - expected_value_sum) / math.sqrt(variance_sum)
         confidence = 1 - alpha / 2
-        print(confidence)
+        # print(confidence)
         offset = norm.ppf(confidence)
         print(offset)
         confidence_interval = [
@@ -42,4 +42,40 @@ class Randomize:
         print("Observed : ", observed_mean)
 
     @classmethod
-    def own_shuffle(cls, _list: list): ...
+    def own_shuffle(cls, _list: list):
+        """This algorithm works on the way that loop through on the _list and
+        on each iteration use randint method to generate the index of an element
+        to swap with"""
+        upper_bound = len(_list) - 1
+        for i in range(len(_list)):
+            if i == upper_bound:
+                if random.randint(1, 10) > 5:
+                    swap_index = random.randint(0, upper_bound - 1)
+                    _list[i], _list[swap_index] = _list[swap_index], _list[i]
+            else:
+                swap_index = random.randint(i + 1, upper_bound)
+                _list[i], _list[swap_index] = _list[swap_index], _list[i]
+
+    @classmethod
+    def z_test_own_shuffle(cls, alpha=0.05):
+        n = 120000
+        orig_list = [1, 2, 3, 4, 5]
+        copy_list = [1, 2, 3, 4, 5]
+        probability_repeat = 1 / 120
+        probability_not_repeat = 1 - probability_repeat
+        # Binomial
+        expected_value = n * probability_repeat
+        variance = n * probability_repeat * probability_not_repeat
+        repetition_count = 0
+        for i in range(n):
+            cls.own_shuffle(copy_list)
+            if copy_list == orig_list:
+                repetition_count += 1
+
+        confidence = 1 - (alpha / 2)
+        offset = norm.ppf(confidence)
+        confidence_interval = [
+            (offset * math.sqrt(variance)) + expected_value,
+            (-offset * math.sqrt(variance)) + expected_value,
+        ]
+        print(confidence_interval, repetition_count)

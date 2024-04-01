@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c07a2a5c-d88c-47dd-abb4-d7b88d5c4207" name="Changes" comment="add statistics&#10;add z-test for random int method of random module">
+    <list default="true" id="c07a2a5c-d88c-47dd-abb4-d7b88d5c4207" name="Changes" comment="- refactor the main&#10;- add method signature for shuffle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/statistics/randomize.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics/randomize.py" afterDir="false" />
@@ -118,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711912285089</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- refactor the main&#10;- add method signature for shuffle">
+      <option name="closed" value="true" />
+      <created>1711987715591</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1711987715591</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -126,6 +134,7 @@
     <MESSAGE value="add a comment for description" />
     <MESSAGE value="add person&#10;refactor student to inherit from person" />
     <MESSAGE value="add statistics&#10;add z-test for random int method of random module" />
-    <option name="LAST_COMMIT_MESSAGE" value="add statistics&#10;add z-test for random int method of random module" />
+    <MESSAGE value="- refactor the main&#10;- add method signature for shuffle" />
+    <option name="LAST_COMMIT_MESSAGE" value="- refactor the main&#10;- add method signature for shuffle" />
   </component>
 </project>
