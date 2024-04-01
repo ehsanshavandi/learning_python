@@ -40,3 +40,6 @@ class Randomize:
         ]
         print(confidence_interval)
         print("Observed : ", observed_mean)
+
+    @classmethod
+    def own_shuffle(cls, _list: list): ...
